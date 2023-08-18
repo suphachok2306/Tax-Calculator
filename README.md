@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Tax Calcurator
 
@@ -69,3 +70,6 @@
 
 ![image](https://github.com/suphachok2306/GenerateToken/assets/60811108/ac84403f-c4b9-4654-a677-a8d8a91c9390)
 --
+=======
+# calTax
+>>>>>>> ca717adf071ff641e7a92cf7c59f34d5d3f7f1cd
