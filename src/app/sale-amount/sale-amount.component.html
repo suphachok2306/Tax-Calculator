@@ -1,0 +1,34 @@
+<!-- <div class="container">
+    <div class="taxComputation">
+        <h2>2. Tax Computation</h2>
+        <h5 class="exRate">View Exchange Rate</h5>
+    </div>
+    <hr class="mt-0">
+    <h3>Provide total value taxable eletronic service</h3>
+    <label for="saleAmount">1. Total value of taxable electronic service exclusive of VAT</label>
+    <input type="text" id="saleAmount" name="saleAmount" [(ngModel)]="saleAmount" (ngModelChange)="formatInput()"
+        (blur)="calculateTotalVat()" [ngClass]="{'right-align': true}" placeholder="THB">
+</div> -->
+
+<div class="container">
+    <div class="taxComputation">
+        <h2>2. Tax Computation</h2>
+        <h5 class="exRate">View Exchange Rate</h5>
+    </div>
+    <hr class="mt-0">
+    <h3>Provide total value taxable electronic service</h3>
+    <div class="form-group">
+        <label for="saleAmount">1. Total value of taxable electronic service exclusive of VAT</label>
+        <div class="input-wrapper">
+            <input type="text" id="saleAmount" name="saleAmount" [(ngModel)]="saleAmount" (ngModelChange)="formatInput()"
+                (blur)="calculateTotalVat()" class="form-control right-align" placeholder="THB">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

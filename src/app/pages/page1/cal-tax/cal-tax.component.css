@@ -1,0 +1,152 @@
+/* .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  
+  .grid-container {
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 16px;
+    padding: 30px;
+    border-radius: 7px;
+  } */
+
+  /* .selectMonthYear {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+} */
+/* 
+.row {
+  display: flex;
+  align-items: flex-end;
+}
+
+.col-md-6 {
+  flex-basis: calc(50% - 10px);
+  margin: 5px;
+}
+
+.btn-primary {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+} */
+
+.container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  border: 1px solid black;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 16px;
+  padding: 30px;
+  border-radius: 7px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+}
+
+.col-md-6 {
+  flex-basis: calc(50% - 10px);
+  margin: 5px;
+}
+
+.btn-primary {
+  display: block;
+  margin: 20px 0; /* อัพเดตขอบเขต */
+  padding: 10px 20px;
+  /*background-color: #007bff;*/
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border: 2px solid black;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 7px;
+  margin-right: 750px;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.selectMonthYear {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+
+.step-progress-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.step-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #555;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin: 0 0px;
+  width: 250px;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background-color: #ccc;
+  margin: 0 5px;
+  align-self: center;
+}
+
+.step.active {
+  background-color: black;
+  color: white;
+}
+
+
+

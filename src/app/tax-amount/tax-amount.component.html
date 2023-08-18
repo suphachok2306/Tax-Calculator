@@ -1,0 +1,15 @@
+<!-- <div class="container">
+    <label for="taxAmount">2. Total VAT to be remitted (7% of 1.)</label>
+    <input type="text" id="taxAmount" name="taxAmount" [(ngModel)]="totalVat" (ngModelChange)="formatInput()"
+        (blur)="formatInputWhenBlur()" (blur)="formatOutput()" [ngClass]="{'right-align': true}" placeholder="THB">
+</div> -->
+
+<div class="container">
+    <div class="form-group">
+        <label for="taxAmount">2. Total VAT to be remitted (7% of 1.)</label>
+        <div class="input-wrapper">
+            <input type="text" id="taxAmount" name="taxAmount" [(ngModel)]="totalVat" (ngModelChange)="formatInput()"
+            (blur)="formatInputWhenBlur()" (blur)="formatOutput()" class="form-control right-align" placeholder="THB">
+        </div>
+    </div>
+</div>

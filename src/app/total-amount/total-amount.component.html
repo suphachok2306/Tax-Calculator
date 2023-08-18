@@ -1,0 +1,16 @@
+<!-- <div class="container">
+    <label for="totalAmount">Total Amount:</label>
+    <input type="text" id="totalAmount" name="totalAmount" [value]="totalAmountFormatted" readonly class="align-right"
+        [ngClass]="{'right-align': true}" placeholder='0.00 THB'>
+</div> -->
+
+<div class="container">
+    <div class="form-group">
+        <label for="totalAmount">5. Total amount of VAT, surcharge, and penalty to be remitted (2 + 3 + 4)</label>
+        <div class="input-wrapper">
+            <input type="text" id="totalAmount" name="totalAmount" [value]="totalAmountFormatted" readonly
+                class="form-control right-align readonly-input" [ngClass]="{'right-align': true}"
+                placeholder='0.00 THB'>
+        </div>
+    </div>
+</div>

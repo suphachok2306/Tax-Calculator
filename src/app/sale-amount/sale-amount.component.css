@@ -1,0 +1,48 @@
+.right-align {
+  text-align: right;
+}
+
+.taxComputation{
+  display: flex;
+  align-items: flex-end;
+}
+
+.exRate {
+  margin-left: 450px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+.form-group label {
+  flex-grow: 1;
+  margin-bottom: 0; /* ลบการเพิ่มระยะห่างด้านล่างของ label */
+}
+
+
+
+.form-control {
+  width: 50%; /* ปรับความกว้างของ input */
+  padding: 0.375rem 1rem; /* ปรับขนาดของ padding */
+  font-size: 0.875rem; /* ปรับขนาดตัวอักษร */
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.2rem; /* ปรับลดขนาดของ border-radius */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-top: 0.25rem;
+  margin-left: 100px; /* ปรับระยะห่างระหว่าง label และ input ตามต้องการ */
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+

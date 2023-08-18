@@ -1,0 +1,14 @@
+<!-- <div class="container">
+    <select [(ngModel)]="selectedYear" (change)="onSelectYear($event)">
+        <option value="" disabled selected>Select Year</option>
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select>
+</div> -->
+
+
+<div class="container">
+    <select [(ngModel)]="selectedYear" (change)="onSelectYear($event)" class="custom-select">
+        <option value="" disabled selected>Select Year</option>
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select>
+</div>

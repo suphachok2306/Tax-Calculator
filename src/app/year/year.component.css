@@ -1,0 +1,30 @@
+/* สีพื้นหลังของ <select> */
+select {
+    background-color: #f7f7f7;
+    border: 1px solid #ced4da;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    font-size: 0.875rem;
+    color: #495057;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* สีพื้นหลังของ <option> เมื่อถูกเลือก */
+option:checked {
+    background-color: #007bff;
+    color: white;
+}
+
+/* สีพื้นหลังของ <option> เมื่อไม่ถูกเลือก */
+option {
+    background-color: white;
+    color: #495057;
+}
+
+/* สไตล์เมื่อเลือก <option> */
+select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
+}

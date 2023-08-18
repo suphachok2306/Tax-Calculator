@@ -1,0 +1,46 @@
+<!-- <div class="container">
+  <h3>Tax Month</h3>
+  <select [(ngModel)]="selectedMonth">
+    <option value="" disabled>Select a month</option>
+    <option *ngFor="let month of months" [value]="month.value" [disabled]="month.value > currentMonth.toString()">{{
+      month.name }}</option>
+  </select>
+</div> -->
+
+
+<!-- <div class="container">
+  <h3>VAT Month</h3>
+  <select [(ngModel)]="selectedMonth">
+    <option value="" disabled>Select a month</option>
+    <option *ngFor="let month of months" [value]="month.value" [disabled]="parseInt(month.value) > currentMonth">{{ month.name }}</option>
+  </select>
+</div> -->
+
+<!-- <div class="container">
+  <h3>VAT Month</h3>
+  <select [(ngModel)]="selectedMonth" (change)="onSelectMonth($event)">
+    <option value="" disabled>Select a month</option>
+    <option *ngFor="let month of months" [value]="month.value" [disabled]="parseInt(month.value) > currentMonth">{{ month.name }}</option>
+  </select>
+</div> -->
+
+
+<div class="container">
+  <h3>VAT Month</h3>
+  <select name="selectedMonth" [(ngModel)]="selectedMonth" (change)="onSelectMonth($event)">
+    <option value="" disabled>Select a month</option>
+    <option *ngFor="let month of months" [value]="month.value" [disabled]="parseInt(month.value) > currentMonth">{{ month.name }}</option>
+  </select>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

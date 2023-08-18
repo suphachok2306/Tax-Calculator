@@ -1,0 +1,26 @@
+/* .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  
+  .grid-container {
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 16px;
+    padding: 30px;
+    border-radius: 7px;
+  }
+
+  .selectMonthYear {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+} */
+
+  
+  
+

@@ -1,0 +1,31 @@
+.radio-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+
+.radio-input {
+    margin-right: 0.25rem;
+    height: 1rem;
+    width: 1rem;
+    appearance: none;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+
+.radio-input:checked {
+    background-color: #000;
+    border-color: white;
+}
+
+

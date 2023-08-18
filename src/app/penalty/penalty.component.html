@@ -1,0 +1,28 @@
+<!-- <div class="container">
+    <label for="penalty">Penalty:</label>
+    <input type="text" id="penalty" name="penalty" [value]="penalty" readonly class="align-right"
+        [ngClass]="{'right-align': true}" [(ngModel)]="penalty" (input)="setPanaltyValue()">
+</div> -->
+
+<!-- <div class="container">
+    <label for="penalty">Penalty:</label>
+    <input type="text" id="penalty" name="penalty" [value]="penalty" readonly class="align-right"
+        [ngClass]="{'right-align': true}">
+</div> -->
+
+<!-- <div class="container">
+    <label for="penalty">Penalty:</label>
+    <input type="text" id="penalty" name="penalty" [value]="penalty" readonly class="align-right"
+        [ngClass]="{'right-align': true}" [ngModel]="penalty.toFixed(2) + ' THB'">
+</div> -->
+
+<div class="container">
+    <div class="form-group">
+        <label for="penalty">4. Penalty</label>
+        <div class="input-wrapper">
+            <input type="text" id="penalty" name="penalty" [value]="penalty" readonly
+                class="form-control right-align readonly-input" [ngClass]="{'right-align': true}"
+                [ngModel]="penalty.toFixed(2) + ' THB'">
+        </div>
+    </div>
+</div>
