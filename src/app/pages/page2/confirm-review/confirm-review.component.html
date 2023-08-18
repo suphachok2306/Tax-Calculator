@@ -6,35 +6,99 @@
     <div class="step" [ngClass]="{'active': currentStep === 1}">2. Review & Confirm</div>
   </div>
 </div>
+
 <div class="container">
   <div class="grid-container">
-    <h4>Tax filing Deatail</h4>
-    <hr>
-    <label>Type of filing: {{ taxData.filingType }}</label>
-    <label>VAT Month: {{ taxData.month }} {{ taxData.year }}</label>
 
-    <h4>Tax Computation</h4>
-    <hr>
 
-    <label>Total value of taxable electronic service exclusive of VAT: {{ (taxData.saleAmount.toFixed(2))}}</label>
-    <label>Total VAT to be remitted {{ (taxData.taxAmount).toFixed(2)}}</label>
-    <h5>(7% Total value of taxable electronic service exclusive of VAT)</h5>
-    <label>Surcharge: {{ (taxData.surcharge.toFixed(2))}}</label>
-    <label>Penalty: {{ (taxData.penalty).toFixed(2) }}</label>
-    <label>Total Amount Payable {{ (taxData.totalAmount)}}</label>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Tax filing Detail</h3>
+        <hr>
+        <div class="label-value">
+          <label>Type of filing:</label>
+          <p>{{ taxData.filingType }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="label-value">
+          <label>VAT Month:</label>
+          <p>{{ taxData.month }} {{ taxData.year }}</p>
+        </div>
+      </div>
+    </div>
 
-    <h4>Declaration</h4>
-    <hr>
-    <label>I hereby certify that infomation given above are true and correct and agree to be bound by such
-      infomation</label>
-  </div>
-  <div class="row mt-3">
-    <div class="col-md-12 text-left">
-      <button class="btn btn-primary" (click)="confirm()">Confirm and Submit</button>
-      <button class="btn btn-primary" (click)="goToHome()">Back</button>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Tax Computation</h3>
+        <hr>
+        <div class="label-value">
+          <label>Total value of taxable electronic service exclusive of VAT:</label>
+          <p>{{ (taxData.saleAmount)}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="label-value">
+          <label>Total VAT to be remitted:</label>
+          <p>{{ (taxData.taxAmount)}}</p>
+        </div>
+        <p>(7% Total value of taxable electronic service exclusive of VAT)</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="label-value">
+          <label>Surcharge:</label>
+          <p>{{ (taxData.surcharge)}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="label-value">
+          <label>Penalty:</label>
+          <p>{{ (taxData.penalty) }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="label-value">
+          <label>Total Amount Payable:</label>
+          <p>{{ (taxData.totalAmount)}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Declaration</h3>
+        <hr>
+        <p>I hereby certify that information given above are true and correct and agree to be bound by such
+          information</p>
+      </div>
+
     </div>
   </div>
-</div> -->
+
+  <div class="row mt-3">
+    <div class="col-md-12 text-left">
+      <button class="btn btn-primary" (click)="goToHome()">Back</button>
+    </div>
+    <div class="col-md-12 text-left">
+      <button class="btn btn-secondary" (click)="confirm()">Confirm and Submit</button>
+    </div>
+  </div> -->
+
 
 <div class="step-progress-container">
   <h2 class="page-title">Submit Tax Filing</h2>
@@ -44,62 +108,102 @@
     <div class="step" [ngClass]="{'active': currentStep === 1}">2. Review & Confirm</div>
   </div>
 </div>
+
 <div class="container">
   <div class="grid-container">
-    <h4>Tax filing Detail</h4>
-    <hr>
-    <div class="row">
-      <div class="col-md-6">
-        <label>Type of filing:</label>
-        <p>{{ taxData.filingType }}</p>
-      </div>
-      <div class="col-md-6">
-        <label>VAT Month:</label>
-        <p>{{ taxData.month }} {{ taxData.year }}</p>
-      </div>
-    </div>
-
-    <h4>Tax Computation</h4>
-    <hr>
 
     <div class="row">
       <div class="col-md-6">
-        <label>Total value of taxable electronic service exclusive of VAT:</label>
-        <p>{{ (taxData.saleAmount.toFixed(2))}}</p>
+        <h3>Tax filing Detail</h3>
+        <hr>
+        <div class="label-value">
+          <label>Type of filing:</label>
+          <p>{{ taxData.filingType }}</p>
+        </div>
       </div>
+    </div>
+    <div class="row">
       <div class="col-md-6">
-        <label>Total VAT to be remitted:</label>
-        <p>{{ (taxData.taxAmount).toFixed(2)}}</p>
-        <h5>(7% Total value of taxable electronic service exclusive of VAT)</h5>
+        <div class="label-value">
+          <label>VAT Month:</label>
+          <p>{{ taxData.month }} {{ taxData.year }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- เพิ่มเงื่อนไขในการแสดง Tax Computation และ Declaration ตามเงื่อนไข -->
+    <div *ngIf="taxData.filingType === 'Ordinary Filing' || taxData.filingType === 'Additional Filing'" class="row">
+      <div class="col-md-6">
+        <h3>Tax Computation</h3>
+        <hr>
+        <div class="label-value">
+          <label>Total value of taxable electronic service exclusive of VAT:</label>
+          <p>{{ (taxData.saleAmount)}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="taxData.filingType === 'Ordinary Filing' || taxData.filingType === 'Additional Filing'" class="row">
+      <div class="col-md-6">
+        <div class="label-value">
+          <label>Total VAT to be remitted:</label>
+          <p>{{ (taxData.taxAmount)}}</p>
+        </div>
+        <p>(7% Total value of taxable electronic service exclusive of VAT)</p>
+      </div>
+    </div>
+
+    <div *ngIf="taxData.filingType === 'Additional Filing'" class="row">
+      <div class="col-md-6">
+        <div class="label-value">
+          <label>Surcharge:</label>
+          <p>{{ (taxData.surcharge)}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="taxData.filingType === 'Additional Filing'" class="row">
+      <div class="col-md-6">
+        <div class="label-value">
+          <label>Penalty:</label>
+          <p>{{ (taxData.penalty) }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="taxData.filingType === 'Additional Filing'" class="row">
+      <div class="col-md-6">
+        <div class="label-value">
+          <label>Total Amount Payable:</label>
+          <p>{{ (taxData.totalAmount)}}</p>
+        </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-6">
-        <label>Surcharge:</label>
-        <p>{{ (taxData.surcharge.toFixed(2))}}</p>
-      </div>
-      <div class="col-md-6">
-        <label>Penalty:</label>
-        <p>{{ (taxData.penalty).toFixed(2) }}</p>
+        <h3>Declaration</h3>
+        <hr>
+        <p>I hereby certify that information given above are true and correct and agree to be bound by such
+          information</p>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <label>Total Amount Payable:</label>
-        <p>{{ (taxData.totalAmount)}}</p>
-      </div>
-    </div>
-
-    <h4>Declaration</h4>
-    <hr>
-    <label class="declaration-label">I hereby certify that information given above are true and correct and agree to be bound by such information</label>
   </div>
+
   <div class="row mt-3">
     <div class="col-md-12 text-left">
-      <button class="btn btn-primary" (click)="confirm()">Confirm and Submit</button>
       <button class="btn btn-primary" (click)="goToHome()">Back</button>
+    </div>
+    <div class="col-md-12 text-left">
+      <button class="btn btn-secondary" (click)="confirm()">Confirm and Submit</button>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+

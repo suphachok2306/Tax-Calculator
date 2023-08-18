@@ -1,12 +1,112 @@
+.container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  border: 1px solid black;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 16px;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* .col-md-6 {
+  flex-basis: calc(75% - 10px);
+  margin: 1px;
+  margin-left: 50px;
+} */
+
+/* .col-md-6 {
+  flex-basis: calc(75% - 10px);
+  margin: 1px 50px 1px 50px;
+} */
+
+.col-md-6 {
+  flex-basis: calc(100% - 20px); /* 100% คือความกว้างเต็มหน้าจอ - 20px เพื่อลบระยะห่างข้างซ้ายและข้างขวา */
+  margin: 1px 20px; /* 1px สำหรับระยะห่างด้านบนและด้านล่าง, 10px สำหรับระยะห่างด้านซ้ายและขวา */
+}
+
+
+
+
+
+.btn-primary {
+  display: block;
+  margin: 20px 0; /* อัพเดตขอบเขต */
+  padding: 10px 20px;
+  /*background-color: #007bff;*/
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border: 2px solid black;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 7px;
+  /*margin-left: 0px;*/
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.btn-secondary{
+  display: block;
+  margin: 20px 0; /* อัพเดตขอบเขต */
+  padding: 10px 20px;
+  /*background-color: #007bff;*/
+  background-color: #F3CD12;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border: 2px solid black;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 7px;
+  margin-left: 500px;
+}
+
+.btn-secondary:hover{
+  background-color: red;
+  color: white;
+  border-color: black;
+}
+
+.selectMonthYear {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+
 .step-progress-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  padding: 20px;
+  /* margin: 0px 0; */
+  
+}
+
+.page-title {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .step-progress {
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -21,72 +121,37 @@
   color: #555;
   font-weight: bold;
   transition: background-color 0.3s;
-  margin: 0 5px;
-}
-
-.active {
-  background-color: #007bff;
-  color: white;
+  margin: 0 0px;
+  width: 250px;
 }
 
 .step-line {
   flex: 1;
   height: 2px;
   background-color: #ccc;
+  margin: 0 5px;
+  align-self: center;
 }
 
-.container {
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.grid-container {
-  display: grid;
-  border: 1px solid black;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 16px;
-  padding: 30px;
-  border-radius: 7px;
-}
-
-.row {
-  display: flex;
-  margin-bottom: 10px;
-}
-
-.col-md-6 {
-  flex-basis: calc(50% - 10px);
-  margin-right: 20px;
-}
-
-.btn-primary {
-  background-color: #007bff;
+.step.active {
+  background-color: black;
   color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-right: 10px;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
+/* .label-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+} */
+
+.label-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: bold;
 }
 
-.declaration-label {
-  display: block;
-  margin-top: 10px;
+.label-value p {
+  margin: 0; /* เพิ่มคุณสมบัตินี้เพื่อลบระยะห่างเริ่มต้นของ <p> */
 }
 
-@media (max-width: 767px) {
-  .row {
-    flex-direction: column;
-  }
-  .col-md-6 {
-    flex-basis: 100%;
-    margin-right: 0;
-  }
-}

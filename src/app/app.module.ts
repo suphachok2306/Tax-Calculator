@@ -20,6 +20,7 @@ import { TotalAmountComponent } from './total-amount/total-amount.component';
 import { FormsModule } from '@angular/forms';
 import { ConfirmReviewComponent } from './pages/page2/confirm-review/confirm-review.component';
 import { CalTaxComponent } from './pages/page1/cal-tax/cal-tax.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CalTaxComponent } from './pages/page1/cal-tax/cal-tax.component';
     TotalAmountComponent,
     ConfirmReviewComponent,
     CalTaxComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { CalTaxComponent } from './pages/page1/cal-tax/cal-tax.component';
     AlertModule.forRoot(),
     FormsModule,
     HttpClientModule,
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

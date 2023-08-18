@@ -33,12 +33,12 @@ export class CalTaxComponent implements OnInit {
   //   this.penalty =  parseFloat(penalty.toFixed(2));
   //   this.penalty = this.penalty + ' THB';
   // }
-  
+
 
   updateSaleAmount(newSaleAmount: number) {
     this.saleAmount = newSaleAmount;
   }
-  
+
   updateSurcharge(surcharge: number) {
     this.surcharge = surcharge;
     // this.surcharge = +surcharge.toFixed(2) ;
@@ -50,7 +50,7 @@ export class CalTaxComponent implements OnInit {
     this.totalVat = totalVat;
   }
 
-  
+
   onFilingTypeChanged(filingType: string) {
     this.filingType = filingType;
     this.updateTotalVat(0); // Reset totalVat to 0 when filingType changes
@@ -68,34 +68,47 @@ export class CalTaxComponent implements OnInit {
     console.log('Selected month:', selectedMonth);
     this.selectedMonth = selectedMonth;
   }
-  
+
   updateSelectedYear(selectedYear: string) {
     console.log('Selected year:', selectedYear);
     this.selectedYear = selectedYear;
   }
-  
-  
+
+
 
   updateTotalAmount(totalAmount: number | null) {
     this.totalAmount = totalAmount;
     console.log("error updateTotalAmount at caltax.ts ");
-    // ทำสิ่งที่คุณต้องการกับค่า totalAmount ที่ได้รับมา
   }
 
   goToConfirmReview() {
-    const queryParams = {
-      filingType: this.filingType,
-      month: this.selectedMonth,
-      year: this.selectedYear,
-      saleAmount: this.saleAmount,
-      taxAmount: this.totalVat,
-      surcharge: this.surcharge,
-      penalty: this.penalty,
-      totalAmount: this.totalAmount
-    };
+    if (this.validateForm()) {
+      const queryParams = {
+        filingType: this.filingType,
+        month: this.selectedMonth,
+        year: this.selectedYear,
+        saleAmount: this.saleAmount,
+        taxAmount: this.totalVat,
+        surcharge: this.surcharge,
+        penalty: this.penalty,
+        totalAmount: this.totalAmount
+      };
 
-    this.router.navigate(['/confirm-review'], { queryParams: queryParams });
+      this.router.navigate(['/confirm-review'], { queryParams: queryParams });
+    } else {
+      alert('Please complete the information.');
+    }
   }
+
+  validateForm(): boolean {
+    if (this.filingType === 'Ordinary Filing' || this.filingType === 'Additional Filing') {
+      return !!this.selectedMonth && !!this.selectedYear && this.saleAmount !== null && this.totalVat !== null &&
+        ((this.filingType === 'Additional Filing' && this.surcharge !== null && this.penalty !== null) ||
+          this.filingType === 'Ordinary Filing');
+    }
+    return false;
+  }
+
 
 
 }
